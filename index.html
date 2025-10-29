@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Web Page</title>
+    <title>Color and Text Change Demo</title>
 </head>
 <body>
-    <script>
-     var a =[1,2,3,4,5];
-     console.log(typeof(a))
-     console.log(a[0] + a[4])
-     var b =a.slice(0,2)
-        console.log(b)
-        var c ={
-            name:"Akash",
-            age:"20",
-            city:"Hyderabad"
-        }
-        console.log(c.name,c.age,c.city)
-        document.write("name: " + c.name + "<br>");
-        document.write("age: " + c.age + "<br>");
-        document.write("city: " + c.city + "<br>");
-    </script>
+  <div id="changecolor">
+    <p id="text">hello world</p>
+    <button onclick="demo()">Change Text</button>
+    <button onclick="buttoncolor()">Dark Mode</button>
+    <button onclick="buttoncolor1()">Light Mode</button>
+  </div>
+
+  <script>
+    // Function to change the text
+    const demo = () => {
+      document.getElementById("text").innerHTML = "Text Changed!";
+    }
+
+    // Function for dark mode
+    const buttoncolor = () => {
+      const colorDiv = document.getElementById("changecolor");
+      colorDiv.style.backgroundColor = "black";
+      colorDiv.style.color = "white"; // Changes text color for better contrast
+    }
+
+    // Function for light mode
+    const buttoncolor1 = () => {
+      const colorDiv = document.getElementById("changecolor");
+      colorDiv.style.backgroundColor = "white";
+      colorDiv.style.color = "black";
+    }
+  </script>
 </body>
 </html>
