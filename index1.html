@@ -1,18 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>My document</title>
-</head> 
-<body>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter Example</title>
   <script>
-     const mul=(a,b)=>{
-      return document.write(`The multiplication is ${a*b}`);
-     }
-     const div=(c,d)=>{
-        return document.write(`The division is ${c/d}`);
-     }
-     mul(2,3)
-     div(6,3)
+    let count = 0;
+
+    function Count() {
+      const counterList = document.getElementById("counterList");
+      counterList.innerHTML = ""; 
+
+      let interval = setInterval(() => {
+        if (count >= 50) {
+          clearInterval(interval);
+          return;
+        }
+
+        const li = document.createElement("li");
+        li.textContent = count;
+        counterList.appendChild(li);
+
+        count++;
+      }, 1000);
+    }
   </script>
+</head>
+
+<body>
+  <h2>Number Counter</h2>
+  <button onclick="Count()">Start Counting</button>
+
+  <ul id="counterList"></ul>
 </body>
+
 </html>
